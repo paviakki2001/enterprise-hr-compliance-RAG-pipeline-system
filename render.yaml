@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: rag-week4-ui-from-week3
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run frontend/streamlit_app.py --server.port $PORT --server.address 0.0.0.0"
+    envVars:
+      - key: BACKEND_BASE_URL
+        sync: false
+      - key: BACKEND_QUERY_PATH
+        value: /query
+      - key: HEALTH_PATH
+        value: /health
+      - key: REQUEST_TIMEOUT_SECONDS
+        value: "90"
+      - key: APP_TITLE
+        value: HR Compliance RAG Assistant
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DEFAULT_TOP_K_RETRIEVAL
+        value: "8"
+      - key: DEFAULT_TOP_K_CONTEXT
+        value: "4"
+      - key: SHOW_CITATIONS_DEFAULT
+        value: "true"

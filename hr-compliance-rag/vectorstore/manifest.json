@@ -1,0 +1,6 @@
+{
+  "embedding_model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "llm_model_name": "google/flan-t5-base",
+  "vector_dim": 384,
+  "records": 2129
+}

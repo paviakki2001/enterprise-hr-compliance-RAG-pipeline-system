@@ -1,0 +1,31 @@
+[
+  {
+    "question": "What kind of HR policies are present in the retrieved system?",
+    "expected_keywords": [
+      "policy",
+      "HR",
+      "retrieved"
+    ]
+  },
+  {
+    "question": "How does metadata traceability help the answer?",
+    "expected_keywords": [
+      "metadata",
+      "traceability"
+    ]
+  },
+  {
+    "question": "What should the system do if context is insufficient?",
+    "expected_keywords": [
+      "context",
+      "insufficient"
+    ]
+  },
+  {
+    "question": "What endpoints are available in the API?",
+    "expected_keywords": [
+      "health",
+      "query"
+    ]
+  }
+]

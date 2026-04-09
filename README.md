@@ -1,103 +1,47 @@
-# Week 4 Complete Package (Regenerated from Your Week 3 Notebook)
 
-This package is regenerated specifically from your uploaded notebook:
 
-**`week_3_Semantic_RAG_Orchestration_with_fast_API.ipynb`**
+# HR Compliance RAG Assistant
 
-So the Week 4 files are aligned with your Week 3 backend design, including:
+A FastAPI-based Retrieval-Augmented Generation (RAG) system designed to answer compliance-related queries using a structured knowledge base.
 
-- **FastAPI endpoint:** `POST /query`
-- **Health endpoint:** `GET /health`
-- **Embedding model:** `sentence-transformers/all-mpnet-base-v2`
-- **Reranker model:** `cross-encoder/ms-marco-MiniLM-L-6-v2`
-- **LLM model:** `google/flan-t5-base`
+## 🚀 Features
+- Interactive web UI (`/ui`)
+- FastAPI backend (`/query`, `/health`)
+- CSV-based knowledge base
+- Retrieved source display with metadata
+- Configurable retrieval parameters (Top-K)
 
-## What this package contains
+## 🏗️ Architecture
+- Backend: FastAPI
+- Data Source: CSV (chunked documents)
+- Retrieval: Keyword-based similarity
+- Deployment: Render
 
-### Frontend
-- Streamlit UI connected to your Week 3 FastAPI contract
-- Support for:
-  - question input
-  - top_k_retrieval
-  - top_k_context
-  - optional metadata filters
-  - answer display
-  - citations display
-  - latency display
-
-### Backend upgrade files
-- Production-style FastAPI app derived from your notebook logic
-- Logging
-- Monitoring
-- CORS support
-- response timing middleware
-- optional cache helpers
-
-### Deployment
-- Dockerfile
-- Render config
-- Railway config
-- Hugging Face Space config
-
-### Documentation
-- deployment guide
-- UI guide
-- architecture overview
-- final evaluation template
-- submission checklist
-
-## Expected repository alignment
-
-Your Week 3 notebook expects paths similar to:
-
-```text
-hr-compliance-rag/
-├── data/
-│   ├── metadata.csv
-│   └── processed/
-│       ├── chunks.csv
-│       └── chunks.parquet
-├── vectorstore/
-│   ├── faiss.index
-│   ├── embeddings.npy
-│   ├── metadata_with_chunks.csv
-│   └── manifest.json
-```
-
-## Main difference from the previous generic package
-
-This regenerated package is **not generic**.  
-It is tailored to the API contract and model choices already used in your uploaded Week 3 notebook.
-
-## Quick start
-
-### 1. Install
-```bash
+## 📂 Project Structure
+backend_support/
+data/chunks.csv
+requirements.txt
+render.yaml
+▶️ Run Locally
 pip install -r requirements.txt
-```
-
-### 2. Run Streamlit UI
-```bash
-streamlit run frontend/streamlit_app.py
-```
-
-### 3. Run backend app
-```bash
 uvicorn backend_support.week4_backend_app:app --host 0.0.0.0 --port 8000
-```
+🌐 Endpoints
+UI → /ui
+Health → /health
+Query → /query
+☁️ Deployment
 
-### 4. Test endpoints
-```bash
-curl http://127.0.0.1:8000/health
-```
+Deployed using Render with:
 
-```bash
-curl -X POST http://127.0.0.1:8000/query \
-  -H "Content-Type: application/json" \
-  -d '{"question":"What are the onboarding compliance requirements?","top_k_retrieval":8,"top_k_context":4,"filters":null}'
-```
+uvicorn backend_support.week4_backend_app:app --host 0.0.0.0 --port $PORT
+📌 Note
 
-## Included reference
-The original uploaded notebook is copied into this package under:
+This project demonstrates a complete RAG pipeline including data ingestion, retrieval, and response generation with source attribution.
 
-`reference/week_3_Semantic_RAG_Orchestration_with_fast_API.ipynb`
+👩‍💻 Author
+
+Pavithra Veerapathiran
+
+
+---
+
